@@ -11,6 +11,7 @@
   --color-secondary: #B2967D;
   --color-accent: #CCE3DE;
   --color-desc: #454545;
+  --font-sans: var(--font-inter);
 }
 
 body {

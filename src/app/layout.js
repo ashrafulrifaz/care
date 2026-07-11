@@ -1,11 +1,12 @@
-import { Manrope, Nunito_Sans } from "next/font/google";
+import { Inter, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
-const manrope = Manrope({
+const inter = Inter({
   weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-manrope'
 })
 
 export const nunitoSans = Nunito_Sans({
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${manrope.className} h-full antialiased`}
+      className={`${inter.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col px-[60px]">
         <Header />
