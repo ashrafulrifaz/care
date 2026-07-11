@@ -1,5 +1,7 @@
-import { Geist, Geist_Mono, Manrope, Nunito_Sans } from "next/font/google";
+import { Manrope, Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const manrope = Manrope({
   weight: ['400', '500', '600', '700'],
@@ -22,7 +24,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${manrope.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col px-[60px]">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
