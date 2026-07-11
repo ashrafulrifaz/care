@@ -8,7 +8,9 @@
 
 @theme {
   --color-background: #F5F3F4;
-  --color-foreground: #171717;
+  --color-secondary: #B2967D;
+  --color-accent: #CCE3DE;
+  --color-desc: #454545;
 }
 
 body {

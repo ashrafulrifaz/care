@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { nunitoSans } from "./layout";
+import Hero from "@/components/HomeComponents/Hero";
 
 export default function Home() {
   return (
     <div>
-      home
-      <h3 className={`${nunitoSans.className}`}>nunito sans</h3>
+      <Hero />
     </div>
   );
 }
