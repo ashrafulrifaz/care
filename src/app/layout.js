@@ -26,11 +26,7 @@ export default function RootLayout({ children }) {
       className={`${inter.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="px-[60px]">
-          <Header />
-          <main>{children}</main>
-        </div>
-        <Footer />
+        {children}
       </body>
     </html>
   );

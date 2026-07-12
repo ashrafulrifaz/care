@@ -18,7 +18,7 @@ const Header = () => {
             </div>
             <NavItems />
             <div className='flex items-center justify-end'>
-                <Button text={'Login'} link={'/login'}></Button>
+                <Button text={'Login'} link={'/signin'}></Button>
             </div>
         </div>
     );
