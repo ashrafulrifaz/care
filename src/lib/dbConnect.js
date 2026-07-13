@@ -3,7 +3,8 @@ const uri = process.env.MONGODB_URI
 const dbName = process.env.DBNAME
 export const collections = {
     USERS: 'users',
-    BOOKINGS: 'bookings'
+    BOOKINGS: 'bookings',
+    SERVICES: 'services',
 }
 
 const client = new MongoClient(uri, {

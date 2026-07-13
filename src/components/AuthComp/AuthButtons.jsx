@@ -5,7 +5,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 const AuthButtons = () => {
     const session = useSession()
-    console.log(session)
+    
     return (
         <div>
             {session.status == 'unauthenticated' ? 
