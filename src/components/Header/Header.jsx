@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import NavItems from './NavItems';
-import Button from '../SmallComponents/Button/Button';
+import { useSession } from 'next-auth/react';
+import AuthButtons from '../AuthComp/AuthButtons';
 
 const Header = () => {
-
+    
     return (
         <div className='bg-white py-1.5 pr-3 pl-4 rounded-full mt-6 grid grid-cols-3 gap-5'>
             <div className='flex items-center'>
@@ -18,7 +19,7 @@ const Header = () => {
             </div>
             <NavItems />
             <div className='flex items-center justify-end'>
-                <Button text={'Login'} link={'/signin'}></Button>
+                <AuthButtons />
             </div>
         </div>
     );

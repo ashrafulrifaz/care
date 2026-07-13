@@ -1,5 +1,6 @@
 'use client'
 import { loginUser } from '@/action/server/auth';
+import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
@@ -13,11 +14,15 @@ const LoginForm = () => {
         const formData = {
             email: form.email.value,
             password: form.password.value,
+            redirect: false,
         };
-        
-        const result = await loginUser(formData);
-        if(result) {
-            router.push('/')
+
+        const result = await signIn('credentials', formData);
+
+        if (result?.ok) {
+            router.push('/');
+        } else {
+            console.error(result?.error);
         }
     }
 
