@@ -1,8 +1,10 @@
 'use client'
 import { registerUser } from '@/action/server/auth';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const RegisterForm = () => {
+    const router = useRouter();
     const handleRegister = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -19,9 +21,10 @@ const RegisterForm = () => {
             email: form.email.value,
             password: form.password.value,
         };
+        
         const result = await registerUser(formData);
         if(result) {
-            alert('sign up succeed')
+            router.push('/')
         }
     }
 

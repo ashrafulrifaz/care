@@ -1,23 +1,36 @@
 'use client'
+import { loginUser } from '@/action/server/auth';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const LoginForm = () => {
+    const router = useRouter();
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log('hello');
+        const form = e.target;
+
+        const formData = {
+            email: form.email.value,
+            password: form.password.value,
+        };
+        
+        const result = await loginUser(formData);
+        if(result) {
+            router.push('/')
+        }
     }
 
     return (
         <form onSubmit={handleLogin} className='flex flex-col items-center w-full'>
             <div className='w-3/4 mt-8'>
                 <label htmlFor="email" className='font-medium text-[17px]'>Email</label>
-                <input type="email" id='email' name='email' placeholder='Enter your email' className='w-full block bg-[#eaeaea] py-3 px-4 rounded-lg mt-2' />
+                <input type="email" id='email' name='email' placeholder='Enter your email' required className='w-full block bg-[#eaeaea] py-3 px-4 rounded-lg mt-2' />
             </div>
 
             <div className='w-3/4 mt-5'>
                 <label htmlFor="password" className='font-medium text-[17px]'>Password</label>
-                <input type="password" id='password' name='password' placeholder='Enter your password' className='w-full block bg-[#eaeaea] py-3 px-4 rounded-lg mt-2' />
+                <input type="password" id='password' name='password' placeholder='Enter your password' required className='w-full block bg-[#eaeaea] py-3 px-4 rounded-lg mt-2' />
             </div>
 
             <div className='w-3/4 mt-4 flex items-center justify-between'>
