@@ -1,7 +1,7 @@
 import React from 'react';
 import Badge from '../SmallComponents/Badge/Badge';
 import Link from 'next/link';
-import { nunitoSans } from '@/app/layout';
+import { nunitoSans } from '@/lib/fonts';
 import { getAllServices } from '@/action/server/services';
 import HomeServiceCard from '../SmallComponents/Cards/HomeServiceCard';
 

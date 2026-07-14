@@ -1,4 +1,4 @@
-import { nunitoSans } from '@/app/layout';
+import { nunitoSans } from '@/lib/fonts';
 import LoginForm from '@/components/AuthComp/LoginForm';
 import Image from 'next/image';
 import React from 'react';

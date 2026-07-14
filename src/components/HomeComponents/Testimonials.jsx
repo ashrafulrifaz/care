@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from '../SmallComponents/Badge/Badge';
-import { nunitoSans } from '@/app/layout';
+import { nunitoSans } from '@/lib/fonts';
 import Image from 'next/image';
 
 const Testimonials = () => {

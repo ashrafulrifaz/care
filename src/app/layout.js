@@ -1,19 +1,6 @@
-import { Inter, Nunito_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import NextAuthProvider from "@/provider/NextAuthProvider";
-
-const inter = Inter({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-manrope'
-})
-
-export const nunitoSans = Nunito_Sans({
-  weight: ['400' ,'500', '600', '700'],
-  subsets: ['latin']
-})
+import { inter } from "@/lib/fonts";
 
 export const metadata = {
   title: "Care - Your Personal Health Assistant",
@@ -23,10 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <NextAuthProvider>
-      <html
-        lang="en"
-        className={`${inter.className} h-full antialiased`}
-      >
+      <html lang="en" className={`${inter.className} h-full antialiased`}>
         <body className="min-h-full flex flex-col">
           {children}
         </body>

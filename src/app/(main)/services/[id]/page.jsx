@@ -1,5 +1,5 @@
 import { getAllServices } from '@/action/server/services';
-import { nunitoSans } from '@/app/layout';
+import { nunitoSans } from '@/lib/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

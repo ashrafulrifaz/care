@@ -1,4 +1,4 @@
-import { nunitoSans } from '@/app/layout';
+import { nunitoSans } from '@/lib/fonts';
 import Link from 'next/link';
 import React from 'react';
 
