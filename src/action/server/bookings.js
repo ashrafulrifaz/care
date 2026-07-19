@@ -7,19 +7,25 @@ import { getServerSession } from "next-auth"
 const bookingCollection = dbConnect(collections.BOOKINGS)
 
 export const postBooking = async (payload) => {
+    const {serviceTitle, fromDate, toDate, totalHour, totalCost, status, division, district, address, email} = payload
     const {user} = await getServerSession(authOptions) || {}
     if(!user) {
         return {success: false}
     }
 
-    console.log(payload);
-    
-
     const newBooking = {
-        
+        serviceTitle: serviceTitle,
+        fromDate: fromDate,
+        toDate: toDate,
+        totalHour: totalHour,
+        totalCost: totalCost,
+        status: status,
+        division: division,
+        district, district,
+        address: address,
+        email: email
     }
 
-    // const query = {email: user.email}
-
-    // const result = 
+    const result = await bookingCollection.insertOne(newBooking)
+    return {success: result.acknowledged}
 }

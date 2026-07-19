@@ -1,16 +1,10 @@
 'use client'
 
 import { nunitoSans } from '@/lib/fonts';
-import { useState } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/style.css';
 
-const BookingCalendar = () => {
-    const [range, setRange] = useState({
-        from: new Date(),
-        to: undefined,
-    });
-
+const BookingCalendar = ({ range, setRange }) => {
     const formatDate = (date) =>
         date?.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
@@ -28,7 +22,7 @@ const BookingCalendar = () => {
                     caption_label: `text-[15px] font-medium text-[#555555] ${nunitoSans.className}`,
                     nav: 'flex items-center justify-between absolute inset-x-2 top-[35px] -translate-y-1/2 z-10',
                     button_previous: 'p-0.5 rounded-full bg-white cursor-pointer ml-3.5',
-                    button_next: 'p-1 rounded-full hover:bg-gray-200 text-gray-500 cursor-pointer mr-3.5',
+                    button_next: 'p-0.5 rounded-full bg-white cursor-pointer mr-3.5',
                     month_grid: 'w-full border-collapse',
                     weekdays: 'flex w-full',
                     weekday: 'text-gray-400 text-sm font-medium flex-1 h-10 flex items-center justify-center',
