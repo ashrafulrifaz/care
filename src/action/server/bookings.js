@@ -29,3 +29,16 @@ export const postBooking = async (payload) => {
     const result = await bookingCollection.insertOne(newBooking)
     return {success: result.acknowledged}
 }
+
+export const getUserBookings = async () => {
+    const {user} = await getServerSession(authOptions) || {}
+    if(!user) {
+        return {success: false}
+    }
+    
+    const query = {email: user.email}
+
+    const result = await bookingCollection.find(query).toArray()
+
+    return result
+}
